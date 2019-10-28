@@ -349,7 +349,7 @@ class XGB:
                       eval_metric=self.feval,
                       early_stopping_rounds=self.early_stop,
                       verbose=False)
-            model.xgb_eval = model.evals_result_["validation_1"]["gini"]
+            model.xgb_eval = model.evals_result_['validation_1']['gini']
             model.best_round = np.argsort(model.xgb_eval)[::-1][0]
             model.importances = model.feature_importances_
             self.models.append(model)
